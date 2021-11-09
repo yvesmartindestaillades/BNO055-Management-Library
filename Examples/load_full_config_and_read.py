@@ -1,4 +1,7 @@
-from math import acos
+
+import sys, board
+sys.path.insert(1,'Lib')
+sys.path.insert(1,'Data')
 from calibration import *
 
 #DEFINE SENSORS HERE

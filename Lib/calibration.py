@@ -25,7 +25,8 @@ inertial measurement unit module with sensor fusion.
 * Adafruit's Register library: https://github.com/adafruit/Adafruit_CircuitPython_Register
 
 """
-
+import sys
+sys.path.insert(1,'Data')
 from ctypes import sizeof
 from adafruit_bno055 import *
 import time
@@ -37,9 +38,9 @@ GRAVITY = 9.80368
 class Calib:
     def __init__(self, sensor, sensorType, sensorID):
         self.s = sensor
-        self.onboardfile = "onboardCalib_"+sensorType+"#"+str(sensorID)
-        self.datafile = "DataCalib_"+sensorType+"#"+str(sensorID)
-        self.fullfile = "FullCalib_"+sensorType+"#"+str(sensorID)
+        self.onboardfile = "Data/onboardCalib_"+sensorType+"#"+str(sensorID)
+        self.datafile = "Data/DataCalib_"+sensorType+"#"+str(sensorID)
+        self.fullfile = "Data/FullCalib_"+sensorType+"#"+str(sensorID)
 
     def set_offset(self,o=(0,0,0)):
         self.s.mode = CONFIG_MODE
